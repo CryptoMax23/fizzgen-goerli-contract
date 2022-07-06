@@ -11,14 +11,14 @@ const main = async () => {
   await nftContract.deployed();
   console.log("Contract deployed to: ", nftContract.address);
 
-  //call the minting function
-  let txn = await nftContract.mintNFT(PUBLIC_KEY, tokenURI);
-  //wait for NFT to be mined
-  await txn.wait();
+  // //call the minting function
+  // let txn = await nftContract.mintNFT(PUBLIC_KEY, tokenURI);
+  // //wait for NFT to be mined
+  // await txn.wait();
 
-  //mint second NFT
-  txn = await nftContract.mintNFT(PUBLIC_KEY, tokenURI);
-  await txn.wait();
+  // //mint second NFT
+  // txn = await nftContract.mintNFT(PUBLIC_KEY, tokenURI);
+  // await txn.wait();
 };
 
 const runMain = async () => {
