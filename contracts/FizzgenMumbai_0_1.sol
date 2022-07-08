@@ -15,11 +15,11 @@ contract ExampleNFT is ERC721URIStorage, Ownable {
    // takes as arguments strings for (1) name of smart contract and (2) symbol for minted
    constructor() ERC721("Fizzgen Mumbai 0.1", "FIZZ") {}
 
+   event NewNFTMinted(address recipient, uint256 tokenId);
+
    function mintNFT(address recipient, string memory tokenURI)
        public onlyOwner
-       returns (uint256)
    {
-       console.log("mintNFT has been called!");
        _tokenIds.increment();
 
        uint256 newItemId = _tokenIds.current();
@@ -28,6 +28,6 @@ contract ExampleNFT is ERC721URIStorage, Ownable {
 
        console.log("New NFT with ID of %s has been minted to %s!", newItemId, recipient);
 
-       return newItemId;
+       emit NewNFTMinted(recipient, newItemId);
    }
 }
