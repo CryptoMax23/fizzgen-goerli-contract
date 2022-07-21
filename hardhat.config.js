@@ -10,24 +10,15 @@ require("@nomiclabs/hardhat-waffle");
 //   solidity: "0.8.12",
 // };
 
-// // FOR DEPLOYING ON MUMBAI
+// // FOR DEPLOYING ON GOERLI
 const { PRIVATE_KEY } = process.env;
+
 module.exports = {
-  defaultNetwork: "PolygonMumbai",
+  solidity: "0.8.12",
   networks: {
-    hardhat: {},
-    PolygonMumbai: {
-      url: "https://rpc-mumbai.maticvigil.com",
+    goerli: {
+      url: `https://eth-goerli.alchemyapi.io/v2/${process.env.ALCHEMY_API_KEY}`,
       accounts: [PRIVATE_KEY],
-    },
-  },
-  solidity: {
-    version: "0.8.12",
-    settings: {
-      optimizer: {
-        enabled: true,
-        runs: 200,
-      },
     },
   },
 };

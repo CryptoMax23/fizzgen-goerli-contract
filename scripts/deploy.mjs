@@ -6,7 +6,9 @@ const tokenURI =
   "ipfs://bafyreigttidsqh24vlowiicrh3ejy5o2r2ab62m3ar7bxygnc3hwkfhley/metadata.json";
 
 const main = async () => {
-  const nftContractFactory = await hre.ethers.getContractFactory("ExampleNFT");
+  const nftContractFactory = await hre.ethers.getContractFactory(
+    "FizzgenGoerli_0_1"
+  );
   const nftContract = await nftContractFactory.deploy();
   await nftContract.deployed();
   console.log("Contract deployed to: ", nftContract.address);
